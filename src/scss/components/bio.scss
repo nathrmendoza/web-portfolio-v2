@@ -1,0 +1,29 @@
+section.bio {
+    padding: 20px 0;
+    margin-bottom: 24px;
+    h3 {
+        display: block;
+        margin-bottom: 12px;
+    }
+    .bio-item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        span.year {
+            font-weight: 700;
+            margin-right: 24px;
+            display: inline-block;
+            position: relative;
+            &:after {
+                content: '|';
+                position: absolute;
+                top: 0;
+                right: -14px;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+//globals
+@import './global/reset';
+@import './global/variables';
+@import './global/fonts';
+@import './global/typography';
+@import './global/animations';
+@import './global/global';
+
+//components
+@import './components/buttons';
+@import './components/header';
+@import './components/footer';
+@import './components/model';
+@import './components/preloader';
+@import './components/secloader';
+
+//sections
+@import './components/hero';
+@import './components/text-hero';
+@import './components/who';
+@import './components/bio';
+@import './components/hobbies';
+@import './components/nextpage';
+@import './components/works-list';

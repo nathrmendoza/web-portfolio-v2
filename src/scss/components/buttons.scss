@@ -1,0 +1,52 @@
+.btn1 {
+    position: relative;
+    span.shadow {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: -5px;
+        width: 100%;
+        height: 100%;
+        filter: brightness(0.5);
+        background: $blue;
+        border-radius: 6px;
+    }
+    &:hover {
+         a {
+             transform: translate(-5px, 5px);
+         }
+    }
+    a {
+        display: inline-block;
+        width: auto;
+        min-width: 120px;
+        border-radius: 6px;
+        background: $blue;
+        color: $white;
+        text-decoration: none;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: all 0.12s ease-in;
+        font-family: $dongle;
+        font-size: 32px;
+        line-height: 24px;
+        z-index: 1;
+        position: relative;
+        padding: 10px 24px;
+    }
+}
+
+.visit-btn {
+    background: $blue;
+    color: $white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.1s ease-in;
+    svg {
+        margin-right: 10px;
+    }
+}

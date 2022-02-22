@@ -1,0 +1,21 @@
+@keyframes linkactive {
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes fade-out {
+    100% {
+        opacity: 0;
+    }
+}

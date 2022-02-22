@@ -1,0 +1,22 @@
+h1 {
+    font: 56px/56px $dongle;
+}
+h2 {
+    font: 52px/52px $dongle;
+}
+h3 {
+    font: 42px/42px $dongle;
+}
+h4 {
+    font: 38px/38px $dongle;
+}
+h5 {
+    font: 32px/32px $dongle;
+}
+h6 {
+    font: 24px/24px $dongle;
+}
+
+p, button, label, li, a, .bio-item, .hobby-item {
+    font: 400 16px/24px $source;
+}

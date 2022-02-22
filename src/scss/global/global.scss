@@ -1,0 +1,23 @@
+//General stuff
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: $dark;
+    color: $white;
+
+    padding-top: 78px;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+main {
+    min-height: calc(100vh - 78px - 128px);
+}

@@ -1,0 +1,31 @@
+.hobbies {
+    padding: 20px 0;
+    margin-bottom: 24px;
+    h3 {
+        display: block;
+        margin-bottom: 12px;
+    }
+    .wrapper>p {
+        margin-bottom: 24px;
+    }
+
+    .hobby-list {
+        .hobby-item {
+            margin-bottom: 24px;
+            h5 {
+                display: flex;
+                align-items: center;
+                font-size: 32px;
+                margin-bottom: 12px;
+                svg {
+                    margin-left: 10px;
+                }
+            }
+            p {
+                padding-left: 16px;
+                text-align: justify;
+                text-align-last: left;
+            }
+        }
+    }
+}

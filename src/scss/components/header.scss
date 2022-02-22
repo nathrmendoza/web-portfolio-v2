@@ -1,0 +1,38 @@
+@import './nav.scss';
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(32, 32, 35, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    .header-wrapper {
+        width: 100%;
+        max-width: 740px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 5px 0;
+    }
+    .left-side {
+        padding: 10px;
+        a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        h5 {
+            margin-left: 8px;
+            color: $white;
+        }
+    }
+    img {
+        width: 48px;
+        height: 48px;
+        display: inline-block;
+    }
+}
