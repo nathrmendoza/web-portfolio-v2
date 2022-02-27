@@ -1,33 +1,32 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import emailjs from '@emailjs/browser'
 
+import FormPopup from './FormPopup'
+
 export default function Form() {
+
+    const [popupOpen, setPopup] = useState(false);
+
     const formik = useFormik({
         initialValues: {
-            fname: "",
-            lname: "",
-            email: "",
-            subject: "",
-            message: ""
+            person_name: "",
+            person_email: "",
+            email_subject: "",
+            email_message: ""
         },
         validationSchema: Yup.object({
-            fname: Yup.string()
-                .min(2, "Please input valid name")
-                .required("Required field"),
-            lname: Yup.string()
-                .min(2, "Please input valid name")
-                .required("Required field"),
-            email: Yup.string()
-                .email("Please input your valid email")
-                .required("Required field"),
-            subject: Yup.string()
-                .required('Required subject for email'),
-            message: Yup.string()
-                .required("Required message for email")
-                // .min(20, "Must be a minimum of 20 characters")
+            person_name: Yup.string()
+                .required("Please enter your name"),
+            person_email: Yup.string()
+                .required("Please enter your email address")
+                .email("Please enter a valid email"),
+            email_subject: Yup.string()
+                .required("Please enter a subject"),
+            email_message: Yup.string()
+                .required("Please enter a message")
         }),
         validateOnBlur: false,
         validateOnChange: false,
@@ -35,6 +34,7 @@ export default function Form() {
             emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, values, process.env.REACT_APP_USER_ID)
                 .then((result) => {
                     console.log(`Success: ${result.text}`);
+                    setPopupState();
                 }, (err) => {
                     console.log(`Error: ${err.text}`);
                 });
@@ -44,37 +44,51 @@ export default function Form() {
         }
     });
 
+    const setPopupState = () => {
+        setPopup(true);
+        setTimeout(() => {
+            setPopup(false);
+        }, 3000)
+    }
+
     const disableEnterKey = (e) => {
         if((e.charCode || e.keyCode) === 13) {
+            console.log('pass');
             e.preventDefault();
         }
     }
 
     return (
+        <>
+        <FormPopup isVisible={popupOpen}/>
         <form onKeyDown={e => disableEnterKey(e)}>
             <ul className='inputs'>
                 <li>
-                    <input type="text" placeholder="First Name" name="fname" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.fname} />
-                    {formik.errors.fname ? <span className='field-error'>{formik.touched.fname && formik.errors.fname}</span> : null}
+                    <label htmlFor="person_name">Your name</label>
+                    <input type="text" id="person_name" name="person_name" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.person_name} />
+                    {formik.errors.person_name ? <span className='field-error'>{formik.touched.person_name && formik.errors.person_name}</span> : null}
                 </li>
                 <li>
-                    <input type="text" placeholder="Last Name" name="lname" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.lname} />
-                    {formik.errors.lname ? <span className='field-error'>{formik.touched.lname && formik.errors.lname}</span> : null}
+                    <label htmlFor="person_email">Email Address</label>
+                    <input type="email" id="person_email" name="person_email" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.person_email} />
+                    {formik.errors.person_email ? <span className='field-error'>{formik.touched.person_email && formik.errors.person_email}</span> : null}
                 </li>
                 <li>
-                    <input type="email" placeholder="Email Address" name="email" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email} />
-                    {formik.errors.email ? <span className='field-error'>{formik.touched.email && formik.errors.email}</span> : null}
+                    <label htmlFor="email_subject">Subject</label>
+                    <input type="text" id="email_subject" name="email_subject" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email_subject} />
+                    {formik.errors.email_subject ? <span className='field-error'>{formik.touched.email_subject && formik.errors.email_subject}</span> : null}
                 </li>
                 <li>
-                    <input type="text" placeholder="Subject" name="subject" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.subject} />
-                    {formik.errors.subject ? <span className='field-error'>{formik.touched.subject && formik.errors.subject}</span> : null}
-                </li>
-                <li>
-                    <textarea name="message" placeholder="Message" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.message}></textarea>
-                    {formik.errors.message ? <span className='field-error'>{formik.touched.message && formik.errors.message}</span> : null}
+                    <label htmlFor="email_message">Message</label>
+                    <textarea name="email_message" id="email_message" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email_message}></textarea>
+                    {formik.errors.email_message ? <span className='field-error'>{formik.touched.email_message && formik.errors.email_message}</span> : null}
                 </li>
             </ul>
-            <input type="submit" value="SUBMIT" onClick={formik.handleSubmit} />
+            <div className='btn1'>
+                <span className='shadow'></span>
+                <input type="submit" value="SUBMIT" onClick={formik.handleSubmit} />
+            </div>
         </form>
+        </>
     )
 }

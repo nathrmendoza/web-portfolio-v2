@@ -1,5 +1,6 @@
 .btn1 {
     position: relative;
+    display: inline-block;
     span.shadow {
         content: '';
         position: absolute;
@@ -12,11 +13,11 @@
         border-radius: 6px;
     }
     &:hover {
-         a {
+         a, input[type="submit"] {
              transform: translate(-5px, 5px);
          }
     }
-    a {
+    a, input[type="submit"] {
         display: inline-block;
         width: auto;
         min-width: 120px;
@@ -33,6 +34,9 @@
         z-index: 1;
         position: relative;
         padding: 10px 24px;
+        cursor: pointer;
+        outline: none;
+        border: none;
     }
 }
 

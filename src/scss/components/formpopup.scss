@@ -1,0 +1,36 @@
+#form-popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .fpop-wrapper {
+        // position: relative;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        width: 480px;
+        min-height: 240px;
+        padding: 42px 24px;
+        background: rgba(40, 194, 73,0.75);
+        backdrop-filter: blur(10px);
+        svg {
+            color: white;
+            font-size: 64px;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 481px) {
+            width: 100%!important;
+        }
+    }
+}
