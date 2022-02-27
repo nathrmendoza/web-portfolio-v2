@@ -1,6 +1,8 @@
 import React from 'react'
+
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import emailjs from '@emailjs/browser'
 
 export default function Form() {
     const formik = useFormik({
@@ -25,15 +27,31 @@ export default function Form() {
                 .required('Required subject for email'),
             message: Yup.string()
                 .required("Required message for email")
-                .min(20, "Must be a minimum of 20 characters")
+                // .min(20, "Must be a minimum of 20 characters")
         }),
+        validateOnBlur: false,
+        validateOnChange: false,
         onSubmit: (values) => {
-            console.log(values);
+            emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, values, process.env.REACT_APP_USER_ID)
+                .then((result) => {
+                    console.log(`Success: ${result.text}`);
+                }, (err) => {
+                    console.log(`Error: ${err.text}`);
+                });
+    
+            //reset form fields
+            formik.resetForm();
         }
     });
 
+    const disableEnterKey = (e) => {
+        if((e.charCode || e.keyCode) === 13) {
+            e.preventDefault();
+        }
+    }
+
     return (
-        <form>
+        <form onKeyDown={e => disableEnterKey(e)}>
             <ul className='inputs'>
                 <li>
                     <input type="text" placeholder="First Name" name="fname" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.fname} />
