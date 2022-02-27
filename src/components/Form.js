@@ -12,20 +12,25 @@ export default function Form() {
 
     const formik = useFormik({
         initialValues: {
-            person_name: "",
-            person_email: "",
-            email_subject: "",
-            email_message: ""
+            fname: "",
+            lname: "",
+            email: "",
+            subject: "",
+            message: ""
         },
         validationSchema: Yup.object({
-            person_name: Yup.string()
-                .required("Please enter your name"),
-            person_email: Yup.string()
+            fname: Yup.string()
+                .required("Please enter your name")
+                .min(2, "Please input valid last name"),
+            lname: Yup.string()
+                .required("Please enter your name")
+                .min(2, "Please input valid last name"),
+            email: Yup.string()
                 .required("Please enter your email address")
                 .email("Please enter a valid email"),
-            email_subject: Yup.string()
+            subject: Yup.string()
                 .required("Please enter a subject"),
-            email_message: Yup.string()
+            message: Yup.string()
                 .required("Please enter a message")
         }),
         validateOnBlur: false,
@@ -64,24 +69,29 @@ export default function Form() {
         <form onKeyDown={e => disableEnterKey(e)}>
             <ul className='inputs'>
                 <li>
-                    <label htmlFor="person_name">Your name</label>
-                    <input type="text" id="person_name" name="person_name" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.person_name} />
-                    {formik.errors.person_name ? <span className='field-error'>{formik.touched.person_name && formik.errors.person_name}</span> : null}
+                    <label htmlFor="fname">First name</label>
+                    <input type="text" id="fname" name="fname" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.fname} />
+                    {formik.errors.fname ? <span className='field-error'>{formik.touched.fname && formik.errors.fname}</span> : null}
                 </li>
                 <li>
-                    <label htmlFor="person_email">Email Address</label>
-                    <input type="email" id="person_email" name="person_email" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.person_email} />
-                    {formik.errors.person_email ? <span className='field-error'>{formik.touched.person_email && formik.errors.person_email}</span> : null}
+                    <label htmlFor="lname">Last name</label>
+                    <input type="text" id="lname" name="lname" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.lname} />
+                    {formik.errors.lname ? <span className='field-error'>{formik.touched.lname && formik.errors.lname}</span> : null}
                 </li>
                 <li>
-                    <label htmlFor="email_subject">Subject</label>
-                    <input type="text" id="email_subject" name="email_subject" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email_subject} />
-                    {formik.errors.email_subject ? <span className='field-error'>{formik.touched.email_subject && formik.errors.email_subject}</span> : null}
+                    <label htmlFor="email">Email Address</label>
+                    <input type="email" id="email" name="email" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email} />
+                    {formik.errors.email ? <span className='field-error'>{formik.touched.email && formik.errors.email}</span> : null}
                 </li>
                 <li>
-                    <label htmlFor="email_message">Message</label>
-                    <textarea name="email_message" id="email_message" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.email_message}></textarea>
-                    {formik.errors.email_message ? <span className='field-error'>{formik.touched.email_message && formik.errors.email_message}</span> : null}
+                    <label htmlFor="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.subject} />
+                    {formik.errors.subject ? <span className='field-error'>{formik.touched.subject && formik.errors.subject}</span> : null}
+                </li>
+                <li>
+                    <label htmlFor="message">Message</label>
+                    <textarea name="message" id="message" onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.message}></textarea>
+                    {formik.errors.message ? <span className='field-error'>{formik.touched.message && formik.errors.message}</span> : null}
                 </li>
             </ul>
             <div className='btn1'>
