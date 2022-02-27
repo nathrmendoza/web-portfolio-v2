@@ -11,10 +11,10 @@ const Nav = () => {
             name: 'Works',
             url: '/works',
         },
-        {
-            name: 'Contact',
-            url: '/contact',
-        },
+        // {
+        //     name: 'Contact',
+        //     url: '/contact',
+        // },
     ]
 
     return (
