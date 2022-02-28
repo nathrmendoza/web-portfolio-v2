@@ -1,0 +1,62 @@
+
+form {
+    margin: 24px 0;
+    ul {
+        width: 100%;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    li {
+        width: 48%;
+        margin-bottom: 24px;
+        &:last-child {
+            width: 100%;
+        }
+        label {
+            display: inline-block;
+            font-size: 32px;
+            line-height: 32px;
+            font-family: $dongle;
+        }
+        input,textarea {
+            width: 100%;
+            display: block;
+        }
+        @media (max-width:480px) {
+            width: 100%!important;
+        }
+    }
+
+    //submit
+    .btn1 {
+        margin-top: 12px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    padding: 5px 12px;
+    font-family: $source;
+    font-size: 16px;
+    line-height: 24px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+textarea {
+    padding: 5px 12px;
+    font-family: $source;
+    font-size: 16px;
+    line-height: 24px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    resize: none;
+    height: 180px;
+}
+

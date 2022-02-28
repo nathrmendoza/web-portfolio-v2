@@ -18,10 +18,21 @@
         background: rgba(255,255,255,0.08);
         border-radius: 8px;
         backdrop-filter: blur(8px);
+        @media (max-width: 480px) {
+            padding-left: 12px;
+            padding-right: 12px;
+            border-radius: 0;
+        }
         article {
             width: calc(100% - 98px);
             padding-left: 24px;
             text-align: center;
+            h2{
+                line-height: 29px;
+            }
+            @media(max-width: 480px) {
+                padding-left: 10px;
+            }
         }
         aside {
             border: 2px solid white;
