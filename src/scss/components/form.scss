@@ -28,6 +28,14 @@ form {
             width: 100%!important;
         }
     }
+
+    //submit
+    .btn1 {
+        margin-top: 12px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 input[type="text"], input[type="password"], input[type="email"] {
@@ -52,9 +60,3 @@ textarea {
     height: 180px;
 }
 
-.btn1 {
-    margin-top: 12px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-}

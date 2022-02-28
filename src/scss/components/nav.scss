@@ -1,13 +1,19 @@
 nav {
     margin-left: 32px;
+    @media (max-width: 480px) {
+        margin-left: 10px;
+    }
     ul {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         li {
             margin-left: 20px;
+            @media (max-width: 480px) {
+                margin-left: 12px;
+            }
             &:first-child {
-                margin-left: 0;
+                margin-left: 0!important;
             }
             &.active a:after {
                 animation: linkactive 0.15s ease-in-out forwards;

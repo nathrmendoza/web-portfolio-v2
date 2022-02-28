@@ -1,6 +1,7 @@
 
 import Layout from "../components/Layout/Layout"
 import WorkItem from "../components/Works/WorkItem"
+import NextPage from "../components/Nav/NextPage"
 
 const Works = () => {
 
@@ -48,6 +49,8 @@ const Works = () => {
                     </div>
                 </div>
             </section>
+
+            <NextPage name="Contact me" url="/contact"/>
         </Layout>
     )
 }
