@@ -9,10 +9,12 @@ import photo from '../assets/pic-of-me.jpg'
 import NextPage from '../components/Nav/NextPage'
 import Scene3d from '../components/Scene3d'
 
+import ToolsList from '../components/ToolsList'
+
 //icons
-import {BsMusicNote} from 'react-icons/bs'
-import {GiPaintBrush, GiKnifeFork} from 'react-icons/gi'
-import {CgGym} from 'react-icons/cg'
+// import {BsMusicNote} from 'react-icons/bs'
+// import {GiPaintBrush, GiKnifeFork} from 'react-icons/gi'
+// import {CgGym} from 'react-icons/cg'
 
 const Home = () => {
     return (
@@ -74,7 +76,7 @@ const Home = () => {
                 </ScrollFadein>
             </section>
 
-            <section className='hobbies'>
+            {/* <section className='hobbies'>
                 <ScrollFadein>
                     <div className='wrapper'>
                         <h3>Hobbies</h3>
@@ -104,6 +106,14 @@ const Home = () => {
                         </div>
                     </div>
                 </ScrollFadein>
+            </section> */}
+
+            <section className='tools-of-trade'>
+                    <div className='wrapper'>
+                        <h3>Tools of Trade</h3>
+                        <p>Below I've listed the technologies that I work with. I've gained proficient knowledge in these tools thru experience and self learning.</p>
+                        <ToolsList/>
+                    </div>
             </section>
 
             <NextPage name="Works" url="/works"/>
