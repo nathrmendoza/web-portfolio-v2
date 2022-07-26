@@ -8,7 +8,6 @@ const Header = () => {
                 <div className='left-side'>
                     <Link to='/'>
                         <img src="/logo-transp.png" alt="site-logo"/>
-                        <h5>Nath-DEV</h5>
                     </Link>
                 </div>
                 <Nav/>
