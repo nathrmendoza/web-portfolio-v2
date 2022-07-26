@@ -22,7 +22,9 @@ const WorkItem = ({children, url, src}) => {
                 <article>
                     {children}
                 </article>
-                <a href={url} target="_blank" rel="noreferrer" className="visit-btn"><FaGlobeAsia/>Visit</a>
+                {url !== "#" &&
+                    <a href={url} target="_blank" rel="noreferrer" className="visit-btn"><FaGlobeAsia/>Visit</a>
+                }
             </div>
         </div>
     )

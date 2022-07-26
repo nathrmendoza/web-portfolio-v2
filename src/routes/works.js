@@ -44,7 +44,11 @@ const Works = () => {
                         </WorkItem>
                         <WorkItem url="https://www.cuadroph.com/" src="cuadro.png">
                             <h3>Cuadro PH</h3>
-                            <p>Small local company providing customized frames, built with CodeIgniter. Worked on the front-end of the site most notably the photo editing feature. </p>
+                            <p>Small local company providing customized frames, built with CodeIgniter. Worked on the front-end of the site most notably the photo editing feature.</p>
+                        </WorkItem>
+                        <WorkItem url="#" src="The_Economist_Logo.svg">
+                            <h3>The Economist</h3>
+                            <p>Worked on a few landing pages for The Economist, most notable ones are Huawei, Asia hub HK</p>
                         </WorkItem>
                     </div>
                 </div>
