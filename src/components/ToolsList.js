@@ -22,32 +22,16 @@ const ToolsList = () => {
                     <h4>Javascript</h4>
                 </ToolItem>
                 <ToolItem tdelay={0.75}>
-                    <DiReact/>
-                    <h4>React</h4>
-                </ToolItem>
-                <ToolItem tdelay={1}>
-                    <SiNextdotjs/>
-                    <h4>Next.js</h4>
-                </ToolItem>
-                <ToolItem tdelay={1.25}>
                     <DiJqueryLogo/>
                     <h4>JQuery</h4>
                 </ToolItem>
-                <ToolItem tdelay={1.5}>
+                <ToolItem tdelay={1.00}>
+                    <DiReact/>
+                    <h4>React</h4>
+                </ToolItem>
+                <ToolItem tdelay={1.25}>
                     <SiPhp/>
                     <h4>PHP</h4>
-                </ToolItem>
-                <ToolItem tdelay={1.75}>
-                    <DiWordpress/>
-                    <h4>Wordpress</h4>
-                </ToolItem>
-                <ToolItem tdelay={2}>
-                    <SiStrapi/>
-                    <h4>Strapi</h4>
-                </ToolItem>
-                <ToolItem tdelay={2.25}>
-                    <SiWebpack/>
-                    <h4>Webpack</h4>
                 </ToolItem>
             </div>
         </AnimatePresence>

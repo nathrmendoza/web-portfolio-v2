@@ -18,6 +18,7 @@ section.bio {
             margin-right: 24px;
             display: inline-block;
             position: relative;
+            min-width: 46px;
             &:after {
                 content: '|';
                 position: absolute;

@@ -35,13 +35,24 @@
             }
         }
         aside {
-            border: 2px solid white;
             overflow: hidden;
-            border-radius: 50%;
+            position: relative;
             img {
+                border-radius: 50%;
                 width: 98px;
                 height: 98px;
                 object-fit: cover;
+            }
+            span.frame {
+                width: 100%;
+                height: 100%;
+                border: 3px solid white;
+                border-radius: 50%;
+                background: transparent;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
             }
         }
     }

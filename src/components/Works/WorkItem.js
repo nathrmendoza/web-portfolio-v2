@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import {FaGlobeAsia} from 'react-icons/fa'
 
+import LazyLoad from 'react-lazyload';
+
 const WorkItem = ({children, url, src}) => {
 
     const [loaded, setLoad] = useState(false);
@@ -13,7 +15,9 @@ const WorkItem = ({children, url, src}) => {
         <div className={`work-item${(loaded) ? ' loaded' : ''}`}>
             <div className="item-wrap">
                 <aside>
-                    <img src={"./works-thumb/" + src} alt="project_thumbnail"/>
+                    <LazyLoad height={133}>
+                        <img src={"./works-thumb/" + src} alt="Project Thumbnail"/>
+                    </LazyLoad>
                 </aside>
                 <article>
                     {children}

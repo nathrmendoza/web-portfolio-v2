@@ -32,12 +32,12 @@ const Contact = () => {
                                     <a href="https://www.facebook.com/neil328/" target="_blank" rel='noreferrer'><FaFacebookF/></a>
                                 </button>
                             </li>
-                            <li>
+                            {/* <li>
                                 <button type="button" className='soc-icons tw-icon'>
                                     <span className='shadow'></span>
                                     <a href="https://twitter.com/thanrx98" target="_blank" rel='noreferrer'><FaTwitter/></a>
                                 </button>
-                            </li>
+                            </li> */}
                             <li>
                                 <button type="button" className='soc-icons ig-icon'>
                                     <span className='shadow'></span>
